@@ -1,0 +1,33 @@
+* Tasks
+** TODO Layout:
+Left menu  with Login/logout, buttons for all the pages and then the right is the actual page.
+
+** TODO Authetification:
+Add authentication using flask-login or similar.
+
+** TODO Main Page
+- [ ] Show stats of services:
+  - [ ] Deluge downloads stats
+  - [ ] Sonarr/Couchpotato snatches,choose to snatch if possible,...
+  - [ ] Basic cpu,ram,temperature,etc...stats.(Not too much I already have netdata for that)
+
+** TODO Services Page 
+Basically show all the services or show a selected services. It would be nice if
+it was interactive, chooising what services to show and which to hide and be
+able to do so from the browser and save it for the next time.
+Services shown in a grid, with name,state (like a sempahore, red(stopped),green(running),yellow(error? Idk))
+Custom name for services, also show the original name.
+Buttons for each service to start,stop,etc.. Button or service name to open the
+service in a page for itself showing logs (journalctl, custom logs also maybe?)
+extra options specific for certain services?
+
+** TODO Timers Page 
+The same as services but with timers, specifically move services to certain timers,etc...
+Currently I have weekly,hourly,etc... timers set on systemd that would be nice to toggle, move services trought them,...
+Website automated way of adding timers in a easy way with a calendar,etc...
+
+** TODO SSH Web client 
+Add a ssh web client for when I have to use external computers that don't have linux/ssh.
+
+
+
