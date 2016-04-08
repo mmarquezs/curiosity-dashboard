@@ -31,3 +31,9 @@ Add a ssh web client for when I have to use external computers that don't have l
 
 
 
+** TODO Administration page
+Even tougth I will be probably the only one that uses the dashboard it might be
+interesting to allow other users if other features are added or simply allow
+other people to restart services or see services status,etc...
+
+Here it should appear global configs, like add remove edit users,... 
