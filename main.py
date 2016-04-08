@@ -8,6 +8,7 @@ from werkzeug.debug import DebuggedApplication
 app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 bus = SystemBus()
+bus.timeout = -1
 sysd = bus.get("org.freedesktop.systemd1")
 sysd.get_unit = types.MethodType(lambda self,name: self._bus.get('.systemd1',self.LoadUnit(name)[0]), sysd)
 
