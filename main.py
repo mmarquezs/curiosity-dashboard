@@ -3,6 +3,10 @@ from flask import Flask,request,jsonify
 from pydbus import SystemBus
 import types
 app = Flask(__name__)
+app.debug = True
+from werkzeug.debug import DebuggedApplication
+app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
+
 bus = SystemBus()
 sysd = bus.get("org.freedesktop.systemd1")
 sysd.get_unit = types.MethodType(lambda self,name: self._bus.get('.systemd1',self.LoadUnit(name)[0]), sysd)
@@ -35,5 +39,4 @@ def systemd_unit_action(unit_name,action):
     return jsonify({'data':method(*[field for field in request.args])[0]})
 
 if __name__ == "__main__":
-    app.debug = True
     app.run(host='0.0.0.0', port=8080)
