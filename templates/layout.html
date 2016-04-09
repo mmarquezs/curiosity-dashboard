@@ -1,0 +1,61 @@
+{% extends "bootstrap/base.html" %}
+{% block head %}
+{{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div id="sidebar" class="row col-lg-1 col-md-2 col-sm-2 hidden-xs col-xs-0">
+            <div id="sidebar-nav">
+                <div class="sidebar-profile">
+                    <div class="profile-name">
+                        Name S. S.
+                    </div>
+                    <div class="profile-username">
+                        username
+                    </div>
+                    <div class="profile-buttons">
+                        <button type="button" class="btn btn-sm">Profile</button>
+                        <button type="button" class="btn btn-sm">Log Out</button>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="nav">
+                        {% block navMenu %}
+                        {% endblock %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-collapsed" class="row visible-xs col-xs-12">
+            <div id="sidebar-collapse-button" >
+                <button type="button" class="btn" data-toggle="collapse" data-target="#nav-collapsed" ><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></button>
+            </div>
+            <div id="nav-collapsed" class="collapse">
+                <div id="sidebar-nav">
+                    <div class="sidebar-profile">
+                        <div class="profile-name">
+                            Marc M. S.
+                        </div>
+                        <div class="profile-username">
+                            curiosity
+                        </div>
+                        <div class="profile-buttons">
+                            <button type="button" class="btn btn-sm">Profile</button>
+                            <button type="button" class="btn btn-sm">Log Out</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul class="nav">
+                            {{ self.navMenu() }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page" class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
+            {% block page %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
