@@ -1,0 +1,58 @@
+html, body, body .container-fluid, body .container-fluid .row  {
+    height: 100%;
+}
+
+#sidebar {
+    border-right: 2px solid;
+    border-color: black;
+    height: 100%;
+    padding: 0px;
+    /* box-shadow: 10px, 0px, 10, 3px, grey; */
+}
+
+#sidebar-collapsed {
+    height: auto;  
+}
+
+#nav-collapsed {
+    border-bottom: 2px solid;
+    border-color: black;
+    padding: 0px;
+    box-shadow: 0px 3px 8px grey;
+}
+
+#nav-collapse-button .btn {
+    background: none;
+}
+
+.profile-name {
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-username {
+    text-align: center;
+    margin-top: 5px;
+    color: grey;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.profile-buttons {
+    text-align: center;
+}
+
+.sidebar-menu {
+    padding-top: 5px;
+}
+
+.sidebar-menu ul.nav li a:hover{
+    background: #b3d9ff;
+}
+
+.sidebar-menu ul.nav li.active{
+    border-left: 2px solid #66b5ff;
+    background: #e6f3ff;
+}
