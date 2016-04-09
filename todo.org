@@ -20,6 +20,7 @@ Custom name for services, also show the original name.
 Buttons for each service to start,stop,etc.. Button or service name to open the
 service in a page for itself showing logs (journalctl, custom logs also maybe?)
 extra options specific for certain services?
+Subscribe to services status (email,pushbullet,etc...)
 
 ** TODO Timers Page 
 The same as services but with timers, specifically move services to certain timers,etc...
@@ -28,9 +29,6 @@ Website automated way of adding timers in a easy way with a calendar,etc...
 
 ** TODO SSH Web client 
 Add a ssh web client for when I have to use external computers that don't have linux/ssh.
-
-
-
 ** TODO Administration page
 Even tougth I will be probably the only one that uses the dashboard it might be
 interesting to allow other users if other features are added or simply allow
