@@ -17,7 +17,6 @@ DEBUG = True
 SECRET_KEY = 'devkey'
 USERNAME = 'admin'
 PASSWORD = 'admin'
-APPLICATION_ROOT = '/dashboard'
 
 #INITIALIZATION
 app = Flask(__name__)
