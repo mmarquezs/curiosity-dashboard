@@ -44,6 +44,24 @@ def init_db():
 def main():
     return render_template('index.html')
 
+@app.route("/dashboard/services")
+def services():
+    services = sysd.ListUnits()[0]
+    new_services_list = []
+    for service in services :
+        if service[0].split('.')[-1]=="service":
+            name = "".join(service[0].split('.')[:-1]).replace("-"," ")
+            filename = service[0]
+            desc = service[1]
+            status = service[4]
+            new_services_list += [{
+                "name" : name,
+                "filename" : filename,
+                "status" : status,
+                "desc" : desc,
+                "status" : status,
+            }]
+    return render_template('services.html',services=new_services_list)
 @app.route("/dashboard/systemd")
 def systemd_unit_list():
     units = sysd.ListUnits()[0]

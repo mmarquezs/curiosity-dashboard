@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block navMenu %}
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li class="active"><a href="/dashboard/services">Services</a></li>
+    <li><a href="/dashboard/timers">Timers</a></li>
+    <li><a href="/dashboard/administration">Administration</a></li>
+{% endblock %}
+{% block page %}
+    <h1>Services</h1>
+    {% set elements_row = 5 %}
+    <table class="table table-striped services">
+        <thead>
+            <tr>
+                <th>Stat</th>
+                <th>Name</th>
+                <th class="hidden-sm hidden-xs">Description</th>
+                <th class="hidden-sm hidden-xs">Filename</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+                <tr>
+                    <th>
+                        <div class="status-icon">
+                            {% if service["status"]=="running" %}
+                                <span title="Running" class="glyphicon glyphicon-ok-sign" aria-label="Running"></span>
+                            {% elif service["status"]=="dead" %}
+                                <span title="Stopped" class="glyphicon glyphicon-remove-sign" aria-label="Stopped"></span>
+                            {% else %}
+                                <span title="{{ service["status"] }}" class="glyphicon glyphicon-question-sign" aria-label="{{ service["status"] }}"></span>
+                            {% endif %}
+                        </div>
+                    </th>
+                    <th>
+                        <div class="service-name">
+                            <p><a href="{{ url_for('service',service_name=service['filename']) }}">{{ service["name"]|capitalize }}</a></p>
+                        </div>
+                    </th>
+                    <th class="hidden-sm hidden-xs">
+                        <div class="service-desc">
+                            <p>{{ service["desc"] }}</p>
+                        </div>
+                    </th>
+                    <th class="hidden-sm hidden-xs">
+                        <div class="service-filename">
+                            <p>{{ service["filename"] }}</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row service-buttons">
+                            <a href="#">
+                                <button type="button" class="btn btn-sm service-start hidden-xs hidden-sm">Start</button>
+                                <button type="button" class="btn btn-sm service-start hidden-lg hidden-md">
+                                    <span class="glyphicon glyphicon-play" aria-label="Unknown"></span>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button type="button" class="btn btn-sm service-stop hidden-xs hidden-sm">Stop</button>
+                                <button type="button" class="btn btn-sm service-stop hidden-lg hidden-md">
+                                    <span class="glyphicon glyphicon-stop" aria-label="Unknown"></span>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button type="button" class="btn btn-sm service-restart hidden-xs hidden-sm">Restart</button>
+                                <button type="button" class="btn btn-sm service-restart hidden-lg hidden-md">
+                                    <span class="glyphicon glyphicon-repeat" aria-label="Unknown"></span>
+                                </button>
+                            </a>
+                        </div>
+                    </th>
+                </tr>
+            {% endfor %}
+    </table>
+
+{% endblock %}

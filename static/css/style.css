@@ -1,13 +1,23 @@
-html, body, body .container-fluid, body .container-fluid .row  {
-    height: 100%;
-}
-
+html,body{min-height:100%;}
 #sidebar {
-    border-right: 2px solid;
-    border-color: black;
     height: 100%;
     padding: 0px;
+    margin-right: 15px;
     /* box-shadow: 10px, 0px, 10, 3px, grey; */
+}
+
+#page {
+    /* margin: 15px; */
+    /* border-left: 2px solid; */
+    /* border-color: black; */
+    padding-left: 0;
+}
+.btn {
+    background: #b3d9ff;
+    padding: 2px;
+}
+.btn:hover {
+    background: #66b5ff;
 }
 
 #sidebar-collapsed {
@@ -21,7 +31,7 @@ html, body, body .container-fluid, body .container-fluid .row  {
     box-shadow: 0px 3px 8px grey;
 }
 
-#nav-collapse-button .btn {
+#sidebar-collapse-button .btn {
     background: none;
 }
 
@@ -56,3 +66,50 @@ html, body, body .container-fluid, body .container-fluid .row  {
     border-left: 2px solid #66b5ff;
     background: #e6f3ff;
 }
+
+.btn.service-start {
+    background: green;
+    color: white;
+}
+
+.btn.service-stop {
+    background: red;
+    color: white;
+}
+
+.btn.service-restart {
+    background: orange;
+    color: white;
+}
+
+.services .status-icon {
+    font-size: 20px;
+    text-align: center;
+    /* padding: inherit; */
+}
+.services tbody tr th {
+    padding: 2px;
+    vertical-align: middle;
+}
+.services .status-icon .glyphicon-ok-sign {
+    color: green;
+}
+
+.services .status-icon .glyphicon-remove-sign {
+    color: red;
+}
+
+.services .status-icon .glyphicon-question-sign {
+    color: orange;
+}
+
+.services .service-desc {
+    padding: inherit;
+}
+.services .service-buttons {
+    text-align: left;
+}
+
+/* html, body, body .container-fluid, body .container-fluid .row  { */
+/*     height: 100%; */
+/* } */
