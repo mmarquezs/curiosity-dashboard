@@ -3,6 +3,9 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 render_template, flash, jsonify,Response
 from flask.ext.login import LoginManager
 from flask.ext.bootstrap import Bootstrap
+from flask.ext.wtf import Form
+from wtforms import StringField, SubmitField
+from wtforms.validators import Required
 from contextlib import closing
 from pydbus import SystemBus
 from werkzeug.debug import DebuggedApplication
